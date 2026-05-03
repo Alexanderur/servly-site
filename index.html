@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+[03.05.2026 16:26] 𝙰𝚕𝚎𝚡: <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -34,7 +34,7 @@ header {
 }
 
 .btn {
-    background: linear-gradient(135deg, #ffb800, #ff9f00);
+    background: linear-gradient(135deg, #ffb800, #ff9500);
     color: black;
     padding: 12px 22px;
     border-radius: 12px;
@@ -48,17 +48,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 40px;
+    padding: 80px 40px;
     gap: 40px;
 }
 
 /* LEFT */
 .hero-left {
-    max-width: 550px;
+    max-width: 520px;
 }
 
 .hero-left h1 {
-    font-size: 52px;
+    font-size: 56px;
     line-height: 1.2;
 }
 
@@ -77,76 +77,68 @@ header {
     display: inline-block;
 }
 
-/* FEATURES */
 .features {
     margin-top: 40px;
 }
 
 .feature {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     color: #ddd;
-    font-size: 15px;
 }
 
-/* RIGHT PHONES */
+/* RIGHT (PHONES) */
 .hero-right {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 520px;
+    height: 520px;
 }
 
-/* PHONE FRAME */
+/* PHONE */
 .phone {
     width: 280px;
     border-radius: 40px;
     background: #111;
-    padding: 10px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
-    position: relative;
-    z-index: 2;
+    padding: 12px;
+    position: absolute;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.9);
 }
 
+/* SCREEN */
 .screen {
     border-radius: 30px;
-    overflow: hidden;
+    padding: 18px;
     background: linear-gradient(180deg, #111, #000);
-    padding: 20px;
 }
 
-/* UI INSIDE PHONE */
-.screen h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
+/* CARDS */
 .card {
     background: #1a1a22;
-    border-radius: 16px;
-    padding: 12px;
+    border-radius: 14px;
+    padding: 10px;
     margin-bottom: 10px;
+    font-size: 14px;
     color: #ccc;
 }
 
-.badge {
-    background: #ffb800;
-    color: black;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 12px;
+/* CLIENT PHONE */
+.phone-left {
+    left: 0;
+    top: 80px;
+    transform: rotate(-10deg);
+    z-index: 1;
 }
 
-/* SECOND PHONE */
-.phone-back {
-    position: absolute;
-    left: -140px;
-    top: 80px;
-    transform: rotate(-8deg);
-    opacity: 0.7;
-    z-index: 1;
+/* MASTER PHONE */
+.phone-right {
+    right: 0;
+    top: 0;
+    transform: rotate(8deg);
+    z-index: 2;
+}
+
+/* TITLE IN PHONE */
+.screen h3 {
+    margin-bottom: 10px;
 }
 
 /* MOBILE */
@@ -156,8 +148,16 @@ header {
         text-align: center;
     }
 
-    .phone-back {
-        display: none;
+    .hero-right {
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .phone {
+        position: relative;
+        transform: none;
+        margin: 15px auto;
     }
 }
 </style>
@@ -197,30 +197,34 @@ header {
     <!-- RIGHT -->
     <div class="hero-right">
 
-        <!-- BACK PHONE -->
-        <div class="phone phone-back">
+        <!-- CLIENT -->
+        <div class="phone phone-left">
             <div class="screen">
-                <h3>Категории</h3>
+                <h3>Главная</h3>
+
+                <div class="card">🔍 Что нужно сделать?</div>
+
                 <div class="card">🔧 Ремонт</div>
                 <div class="card">🧹 Уборка</div>
                 <div class="card">💡 Электрика</div>
+
+                <div class="card">
+                    ⭐ Лучший мастер недели<br>
+                    Георгий 4.9
+                </div>
             </div>
         </div>
 
-        <!-- MAIN PHONE -->
-        <div class="phone">
+        <!-- MASTER -->
+        <div class="phone phone-right">
             <div class="screen">
-                <h3>Привет, Anton</h3>
+                <h3>Заказы рядом</h3>
+[03.05.2026 16:26] 𝙰𝚕𝚎𝚡: <div class="card">Электрик — 150₾</div>
+                <div class="card">Уборка — 120₾</div>
+                <div class="card">Сборка мебели — 200₾</div>
 
-                <div class="card">
-                    Срочный вызов мастера
-                </div>
-[03.05.2026 16:19] 𝙰𝚕𝚎𝚡: <div class="card">
-                    Электрик <span class="badge">4.9</span>
-                </div>
-
-                <div class="card">
-                    Уборка квартиры
+                <div class="card" style="background:#ffb800;color:black;">
+                    Новый заказ рядом
                 </div>
             </div>
         </div>

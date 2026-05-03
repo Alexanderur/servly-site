@@ -1,4 +1,4 @@
-[03.05.2026 17:59] 𝙰𝚕𝚎𝚡: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -12,12 +12,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
     background: #0b0b0b;
-    color: #fff;
+    color: white;
 }
 
 /* HEADER */
@@ -25,7 +25,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 30px 60px;
 }
 
 .logo {
@@ -33,19 +33,19 @@ header {
     font-size: 20px;
 }
 
-nav {
-    display: flex;
-    gap: 30px;
-    opacity: 0.8;
+nav a {
+    margin: 0 15px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-.btn {
-    background: #ffc400;
-    color: #000;
+.cta {
+    background: #ffc107;
+    color: black;
     padding: 12px 20px;
     border-radius: 10px;
     font-weight: 600;
-    cursor: pointer;
 }
 
 /* HERO */
@@ -53,135 +53,105 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 5%;
-    min-height: 100vh;
-    background: radial-gradient(circle at right, rgba(255,200,0,0.2), transparent 40%);
+    padding: 60px;
 }
 
-.hero-text {
+/* LEFT */
+.hero-left {
     max-width: 520px;
 }
 
 .badge {
-    background: rgba(255,255,255,0.1);
-    display: inline-block;
+    background: #1c1c1c;
     padding: 8px 14px;
     border-radius: 20px;
+    display: inline-block;
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
-h1 {
+.hero h1 {
     font-size: 48px;
     line-height: 1.2;
 }
 
-h1 span {
-    color: #ffc400;
+.yellow {
+    color: #ffc107;
 }
 
 .subtitle {
-    margin-top: 20px;
-    opacity: 0.7;
-    line-height: 1.6;
+    color: #aaa;
+    margin: 20px 0;
+    font-size: 15px;
 }
 
-.cta {
-    margin-top: 30px;
+.btn-main {
+    display: inline-block;
+    background: #ffc107;
+    color: black;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-bottom: 25px;
 }
 
-.features {
-    margin-top: 30px;
-    display: grid;
-    gap: 10px;
-    opacity: 0.8;
+.features div {
+    margin: 10px 0;
+    color: #ddd;
 }
 
-/* IMAGE */
-.hero-image {
+/* RIGHT (ТЕЛЕФОНЫ) */
+.hero-right {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    position: relative;
 }
 
-.hero-image img {
-    width: 650px;
+/* ВАЖНО — вот норм телефоны */
+.phones {
+    width: 520px;
     max-width: 100%;
-    filter: drop-shadow(0 50px 100px rgba(0,0,0,0.9));
-    transition: 0.4s;
+    display: block;
+    filter: drop-shadow(0 40px 100px rgba(255, 193, 7, 0.25));
 }
 
-.hero-image img:hover {
-    transform: scale(1.03);
-}
-
-/* STATS */
+/* СТАТИСТИКА */
 .stats {
-    background: #111;
-    padding: 30px;
-    margin: 0 5%;
+    background: #f2f2f2;
+    color: black;
+    padding: 25px;
     border-radius: 20px;
+    margin: 40px 60px;
     display: flex;
     justify-content: space-around;
-    margin-top: -80px;
-}
-
-.stat {
     text-align: center;
 }
 
-.stat h3 {
-    font-size: 22px;
-}
-
-.stat p {
-    opacity: 0.6;
-    margin-top: 5px;
+.stats div {
+    font-weight: 600;
 }
 
 /* HOW */
-.section {
-    padding: 80px 5%;
+.how {
+    padding: 60px;
+}
+
+.how h2 {
+    margin-bottom: 30px;
 }
 
 .steps {
     display: flex;
-    gap: 40px;
-    margin-top: 30px;
+    justify-content: space-between;
 }
 
 .step {
-    background: #111;
+    width: 23%;
+    background: #151515;
     padding: 20px;
     border-radius: 15px;
-    flex: 1;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 34px;
-    }
-
-    .hero-image img {
-        width: 90%;
-        margin-top: 40px;
-    }
-
-    .steps {
-        flex-direction: column;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: 20px;
-    }
+    color: #ccc;
 }
 </style>
 </head>
@@ -191,30 +161,27 @@ h1 span {
 <header>
     <div class="logo">SERVLY</div>
     <nav>
-        <div>Главная</div>
-        <div>Как это работает</div>
-        <div>Отзывы</div>
+        <a href="#">Главная</a>
+        <a href="#">Как это работает</a>
+        <a href="#">Отзывы</a>
     </nav>
-    <div class="btn">Оставить заявку</div>
+    <div class="cta">Оставить заявку</div>
 </header>
 
 <section class="hero">
-    <div class="hero-text">
-
+    <div class="hero-left">
         <div class="badge">⚡ Найдём мастера за 10 минут</div>
 
         <h1>
             Решаем ваши задачи быстро.<br>
-            <span>Мастера рядом.</span>
+            <span class="yellow">Мастера рядом.</span>
         </h1>
 
         <div class="subtitle">
-            Найдём проверенного мастера за 10 минут — для любых задач дома и в офисе.
+            Найдём проверенного мастера за 10 минут — для любых задач
         </div>
 
-        <div class="cta">
-            <div class="btn">Оставить заявку →</div>
-        </div>
+        <div class="btn-main">Оставить заявку</div>
 
         <div class="features">
             <div>⚡ Быстрый поиск</div>
@@ -222,55 +189,29 @@ h1 span {
             <div>⏱ Экономия времени</div>
             <div>⭐ Любые задачи</div>
         </div>
-
     </div>
 
-    <div class="hero-image">
-        <img src="phones.jpg" alt="Servly App">
+    <div class="hero-right">
+        <!-- ВСТАВЛЯЕШЬ СВОЙ ФАЙЛ -->
+        <img src="phones.jpg" class="phones">
     </div>
 </section>
 
-<div class="stats">
-    <div class="stat">
-        <h3>10K+</h3>
-        <p>Клиентов</p>
-    </div>
-    <div class="stat">
-        <h3>4.9 ⭐</h3>
-        <p>Рейтинг</p>
-    </div>
-    <div class="stat">
-        <h3>100%</h3>
-        <p>Проверенные</p>
-    </div>
-    <div class="stat">
-        <h3>10 мин</h3>
-        <p>Поиск</p>
-    </div>
-</div>
-[03.05.2026 17:59] 𝙰𝚕𝚎𝚡: <section class="section">
+<section class="stats">
+    <div>10K+<br>Клиентов</div>
+    <div>4.9 ⭐<br>Рейтинг</div>
+    <div>100%<br>Проверенные</div>
+    <div>10 мин<br>Поиск</div>
+</section>
+
+<section class="how">
     <h2>Как это работает</h2>
 
     <div class="steps">
-        <div class="step">
-            <h3>1. Оставьте заявку</h3>
-            <p>Опишите задачу</p>
-        </div>
-
-        <div class="step">
-            <h3>2. Найдём мастера</h3>
-            <p>Подберём специалиста</p>
-        </div>
-
-        <div class="step">
-            <h3>3. Мастер приедет</h3>
-            <p>И выполнит работу</p>
-        </div>
-
-        <div class="step">
-            <h3>4. Оплата</h3>
-            <p>После выполнения</p>
-        </div>
+        <div class="step">1. Оставьте заявку</div>
+        <div class="step">2. Найдём мастера</div>
+        <div class="step">3. Мастер приедет</div>
+        <div class="step">4. Оплата после</div>
     </div>
 </section>
 

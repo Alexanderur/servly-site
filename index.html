@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -8,150 +8,208 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 
-body {
-    background: #0b0b0b;
-    color: white;
+body{
+    background:#0b0b0b;
+    color:white;
 }
 
 /* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 60px;
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 20px;
+.logo{font-weight:700;}
+
+nav{display:flex;}
+nav a{
+    margin:0 10px;
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
 }
 
-nav a {
-    margin: 0 15px;
-    color: #ccc;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.cta {
-    background: #ffc107;
-    color: black;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-weight: 600;
+.cta{
+    background:#ffc107;
+    color:black;
+    padding:10px 16px;
+    border-radius:10px;
 }
 
 /* HERO */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px;
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px 40px;
+    flex-wrap:wrap;
 }
 
-/* LEFT */
-.hero-left {
-    max-width: 520px;
+.hero-left{
+    max-width:500px;
 }
 
-.badge {
-    background: #1c1c1c;
-    padding: 8px 14px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 13px;
+h1{
+    font-size:46px;
+    line-height:1.2;
 }
 
-.hero h1 {
-    font-size: 48px;
-    line-height: 1.2;
+.yellow{color:#ffc107;}
+
+.subtitle{
+    color:#aaa;
+    margin:20px 0;
 }
 
-.yellow {
-    color: #ffc107;
+.btn{
+    background:#ffc107;
+    color:black;
+    padding:14px 20px;
+    border-radius:12px;
+    display:inline-block;
+    margin-bottom:20px;
 }
 
-.subtitle {
-    color: #aaa;
-    margin: 20px 0;
-    font-size: 15px;
+.features div{
+    margin:8px 0;
 }
 
-.btn-main {
-    display: inline-block;
-    background: #ffc107;
-    color: black;
-    padding: 14px 24px;
-    border-radius: 12px;
-    font-weight: 600;
-    margin-bottom: 25px;
+/* PHONES */
+.hero-right{
+    position:relative;
+    width:400px;
+    height:520px;
 }
 
-.features div {
-    margin: 10px 0;
-    color: #ddd;
+.phone{
+    width:240px;
+    height:500px;
+    background:#111;
+    border-radius:28px;
+    padding:12px;
+    position:absolute;
+    box-shadow:0 30px 80px rgba(0,0,0,0.8);
+    animation:float 4s ease-in-out infinite;
 }
 
-/* RIGHT (ТЕЛЕФОНЫ) */
-.hero-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
+.phone1{
+    right:120px;
+    transform:rotate(-8deg);
 }
 
-/* ВАЖНО — вот норм телефоны */
-.phones {
-    width: 520px;
-    max-width: 100%;
-    display: block;
-    filter: drop-shadow(0 40px 100px rgba(255, 193, 7, 0.25));
+.phone2{
+    right:0;
+    top:40px;
+    transform:rotate(8deg);
+    animation-delay:1s;
 }
 
-/* СТАТИСТИКА */
-.stats {
-    background: #f2f2f2;
-    color: black;
-    padding: 25px;
-    border-radius: 20px;
-    margin: 40px 60px;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(var(--rot));}
+    50%{transform:translateY(-10px) rotate(var(--rot));}
 }
 
-.stats div {
-    font-weight: 600;
+.phone1{--rot:-8deg;}
+.phone2{--rot:8deg;}
+
+.screen{
+    background:#0b0b0b;
+    height:100%;
+    border-radius:20px;
+    padding:10px;
 }
 
-/* HOW */
-.how {
-    padding: 60px;
+.search{
+    background:#1a1a1a;
+    padding:10px;
+    border-radius:10px;
+    margin:10px 0;
+    color:#777;
 }
 
-.how h2 {
-    margin-bottom: 30px;
+.tag{
+    display:inline-block;
+    background:#1a1a1a;
+    padding:6px 10px;
+    border-radius:20px;
+    margin:5px 5px 0 0;
+    font-size:12px;
 }
 
-.steps {
-    display: flex;
-    justify-content: space-between;
+.card-yellow{
+    background:#ffc107;
+    color:black;
+    padding:10px;
+    border-radius:10px;
+    margin:10px 0;
 }
 
-.step {
-    width: 23%;
-    background: #151515;
-    padding: 20px;
-    border-radius: 15px;
-    color: #ccc;
+.card-dark{
+    background:#1a1a1a;
+    padding:10px;
+    border-radius:10px;
+    margin:8px 0;
+}
+
+/* SECTION */
+.section{
+    padding:60px 40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.box{
+    background:#141414;
+    padding:20px;
+    border-radius:15px;
+}
+
+/* FORM */
+.form{
+    background:#141414;
+    padding:30px;
+    border-radius:20px;
+    margin-top:40px;
+}
+
+input,textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    background:#1a1a1a;
+    color:white;
+}
+
+button{
+    background:#ffc107;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-right{
+        margin-top:40px;
+    }
+
+    nav{display:none;}
 }
 </style>
 </head>
@@ -161,58 +219,90 @@ nav a {
 <header>
     <div class="logo">SERVLY</div>
     <nav>
-        <a href="#">Главная</a>
         <a href="#">Как это работает</a>
-        <a href="#">Отзывы</a>
+        <a href="#">Преимущества</a>
     </nav>
     <div class="cta">Оставить заявку</div>
 </header>
 
 <section class="hero">
-    <div class="hero-left">
-        <div class="badge">⚡ Найдём мастера за 10 минут</div>
 
-        <h1>
-            Решаем ваши задачи быстро.<br>
-            <span class="yellow">Мастера рядом.</span>
-        </h1>
+<div class="hero-left">
+<h1>Найди мастера<br><span class="yellow">за 2 минуты</span></h1>
 
-        <div class="subtitle">
-            Найдём проверенного мастера за 10 минут — для любых задач
-        </div>
+<div class="subtitle">
+Сервис для поиска специалистов рядом с вами.  
+Клиенты быстро находят помощь, мастера — получают заказы и выплаты.
+</div>
 
-        <div class="btn-main">Оставить заявку</div>
+<div class="btn">Оставить заявку</div>
 
-        <div class="features">
-            <div>⚡ Быстрый поиск</div>
-            <div>✔ Проверенные мастера</div>
-            <div>⏱ Экономия времени</div>
-            <div>⭐ Любые задачи</div>
-        </div>
-    </div>
+<div class="features">
+<div>✔ Проверенные специалисты</div>
+<div>✔ Онлайн оплата</div>
+<div>✔ Выплаты мастерам</div>
+</div>
+</div>
 
-    <div class="hero-right">
-        <!-- ВСТАВЛЯЕШЬ СВОЙ ФАЙЛ -->
-        <img src="phones.jpg" class="phones">
-    </div>
+<div class="hero-right">
+
+<div class="phone phone1">
+<div class="screen">
+<div>Привет</div>
+<div class="search">Что нужно сделать?</div>
+ <div>
+<span class="tag">Сантехник</span>
+<span class="tag">Уборка</span>
+</div>
+
+<div class="card-yellow">Активный заказ</div>
+<div class="card-dark">Срочный вызов</div>
+</div>
+</div>
+
+<div class="phone phone2">
+<div class="screen">
+<div class="card-dark">Баланс</div>
+<div class="card-dark">Мои заказы</div>
+<div class="card-dark">Способы выплат</div>
+<div class="card-dark">Документы</div>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<section class="stats">
-    <div>10K+<br>Клиентов</div>
-    <div>4.9 ⭐<br>Рейтинг</div>
-    <div>100%<br>Проверенные</div>
-    <div>10 мин<br>Поиск</div>
+<section class="section">
+<h2>Как это работает</h2>
+
+<div class="grid">
+<div class="box">1. Оставляете заявку</div>
+<div class="box">2. Получаете предложения</div>
+<div class="box">3. Выбираете мастера</div>
+</div>
 </section>
 
-<section class="how">
-    <h2>Как это работает</h2>
+<section class="section">
+<h2>Оплата и выплаты</h2>
 
-    <div class="steps">
-        <div class="step">1. Оставьте заявку</div>
-        <div class="step">2. Найдём мастера</div>
-        <div class="step">3. Мастер приедет</div>
-        <div class="step">4. Оплата после</div>
-    </div>
+<div class="grid">
+<div class="box">Клиент оплачивает заказ через сервис</div>
+<div class="box">Деньги резервируются до выполнения</div>
+<div class="box">Мастер получает выплату после работы</div>
+</div>
+</section>
+
+<section class="section">
+<div class="form">
+<h2>Оставить заявку</h2>
+
+<input placeholder="Ваше имя">
+<input placeholder="Телефон">
+<textarea placeholder="Что нужно сделать"></textarea>
+
+<button>Отправить</button>
+</div>
 </section>
 
 </body>

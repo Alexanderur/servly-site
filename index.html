@@ -1,29 +1,23 @@
-<!DOCTYPE html>
+[03.05.2026 16:19] 𝙰𝚕𝚎𝚡: <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Servly</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: #0b0b0f;
+    background: radial-gradient(circle at top right, #1a1a1f, #0b0b0f);
     color: white;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
 }
 
 /* HEADER */
@@ -31,21 +25,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 40px;
 }
 
 .logo {
+    font-size: 22px;
     font-weight: 700;
-    font-size: 20px;
 }
 
 .btn {
-    background: #f5b400;
+    background: linear-gradient(135deg, #ffb800, #ff9f00);
     color: black;
-    padding: 12px 20px;
-    border-radius: 10px;
+    padding: 12px 22px;
+    border-radius: 12px;
     font-weight: 600;
     text-decoration: none;
+    box-shadow: 0 10px 30px rgba(255,184,0,0.3);
 }
 
 /* HERO */
@@ -53,84 +48,116 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 60px;
+    padding: 60px 40px;
     gap: 40px;
 }
 
-.hero-text h1 {
-    font-size: 48px;
+/* LEFT */
+.hero-left {
+    max-width: 550px;
+}
+
+.hero-left h1 {
+    font-size: 52px;
     line-height: 1.2;
 }
 
-.hero-text span {
-    color: #f5b400;
+.hero-left span {
+    color: #ffb800;
 }
 
-.hero-text p {
-    margin: 20px 0;
-    opacity: 0.7;
-}
-
-.hero img {
-    width: 300px;
-}
-
-/* CARDS */
-.section {
-    margin-top: 80px;
-}
-
-.cards {
-    display: flex;
-    gap: 20px;
+.hero-left p {
     margin-top: 20px;
+    color: #aaa;
+    font-size: 18px;
+}
+
+.hero-left .btn {
+    margin-top: 30px;
+    display: inline-block;
+}
+
+/* FEATURES */
+.features {
+    margin-top: 40px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #ddd;
+    font-size: 15px;
+}
+
+/* RIGHT PHONES */
+.hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* PHONE FRAME */
+.phone {
+    width: 280px;
+    border-radius: 40px;
+    background: #111;
+    padding: 10px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 2;
+}
+
+.screen {
+    border-radius: 30px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #111, #000);
+    padding: 20px;
+}
+
+/* UI INSIDE PHONE */
+.screen h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .card {
     background: #1a1a22;
-    padding: 20px;
     border-radius: 16px;
-    flex: 1;
+    padding: 12px;
+    margin-bottom: 10px;
+    color: #ccc;
 }
 
-/* FORM */
-.form {
-    background: #1a1a22;
-    padding: 30px;
-    border-radius: 16px;
-    margin-top: 60px;
+.badge {
+    background: #ffb800;
+    color: black;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
 }
 
-input, textarea {
-    width: 100%;
-    margin-top: 10px;
-    padding: 14px;
-    border-radius: 10px;
-    border: none;
-}
-
-textarea {
-    height: 100px;
-}
-
-button {
-    margin-top: 15px;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    background: #f5b400;
-    font-weight: 600;
+/* SECOND PHONE */
+.phone-back {
+    position: absolute;
+    left: -140px;
+    top: 80px;
+    transform: rotate(-8deg);
+    opacity: 0.7;
+    z-index: 1;
 }
 
 /* MOBILE */
-@media(max-width: 768px) {
+@media (max-width: 900px) {
     .hero {
         flex-direction: column;
         text-align: center;
     }
 
-    .cards {
-        flex-direction: column;
+    .phone-back {
+        display: none;
     }
 }
 </style>
@@ -138,52 +165,69 @@ button {
 
 <body>
 
-<div class="container">
-
 <header>
-<div class="logo">SERVLY</div>
-<a href="#form" class="btn">Оставить заявку</a>
+    <div class="logo">SERVLY</div>
+    <a href="#" class="btn">Оставить заявку</a>
 </header>
 
 <section class="hero">
-<div class="hero-text">
-<h1>Найди мастера <br><span>за 2 минуты</span></h1>
-<p>Сервис для поиска проверенных специалистов</p>
-<a href="#form" class="btn">Оставить заявку</a>
-</div>
 
-<img src="https://i.imgur.com/8Km9tLL.png" alt="">
+    <!-- LEFT -->
+    <div class="hero-left">
+        <h1>
+            Решаем ваши задачи быстро.<br>
+            <span>Мастера рядом.</span>
+        </h1>
+
+        <p>
+            Найдём проверенного мастера за 10 минут —
+            для любых задач в доме и офисе.
+        </p>
+
+        <a href="#" class="btn">Оставить заявку</a>
+
+        <div class="features">
+            <div class="feature">⚡ Быстрый поиск</div>
+            <div class="feature">🛡 Проверенные мастера</div>
+            <div class="feature">⏱ Экономия времени</div>
+            <div class="feature">⭐ Любые задачи</div>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero-right">
+
+        <!-- BACK PHONE -->
+        <div class="phone phone-back">
+            <div class="screen">
+                <h3>Категории</h3>
+                <div class="card">🔧 Ремонт</div>
+                <div class="card">🧹 Уборка</div>
+                <div class="card">💡 Электрика</div>
+            </div>
+        </div>
+
+        <!-- MAIN PHONE -->
+        <div class="phone">
+            <div class="screen">
+                <h3>Привет, Anton</h3>
+
+                <div class="card">
+                    Срочный вызов мастера
+                </div>
+[03.05.2026 16:19] 𝙰𝚕𝚎𝚡: <div class="card">
+                    Электрик <span class="badge">4.9</span>
+                </div>
+
+                <div class="card">
+                    Уборка квартиры
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </section>
-
-<div class="section">
-<h2>Почему Servly</h2>
-<div class="cards">
-<div class="card">⚡ Быстрый отклик</div>
-<div class="card">✔ Проверенные мастера</div>
-<div class="card">💬 Удобный чат</div>
-</div>
-</div>
-
-<div class="section">
-<h2>Популярные мастера</h2>
-<div class="cards">
-<div class="card">🔧 Сантехник</div>
-<div class="card">💡 Электрик</div>
-<div class="card">🧹 Уборка</div>
-</div>
-</div>
-
-<div id="form" class="form">
-<h2>Оставить заявку</h2>
-
-<input placeholder="Ваше имя">
-<input placeholder="Телефон">
-<textarea placeholder="Что нужно сделать"></textarea>
-
-<button>Отправить</button>
-</div>
-
-</div>
 
 </body>
 </html>

@@ -1,14 +1,11 @@
-[03.05.2026 16:33] 𝙰𝚕𝚎𝚡: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Servly</title>
 
 <style>
-
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -33,12 +30,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .logo {
-    font-size: 20px;
     font-weight: 700;
+    font-size: 20px;
 }
 
 .btn {
@@ -55,17 +52,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
 }
 
 /* LEFT */
 .hero-left {
-    max-width: 520px;
+    max-width: 500px;
 }
 
 .hero-left h1 {
-    font-size: 48px;
-    line-height: 1.2;
+    font-size: 52px;
+    line-height: 1.1;
     margin-bottom: 20px;
 }
 
@@ -75,56 +71,66 @@ header {
 
 .hero-left p {
     color: #aaa;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-/* RIGHT (PHONES) */
-.hero-right {
+/* PHONES */
+.hero-center {
     position: relative;
-    width: 600px;
-    height: 500px;
+    width: 520px;
+    height: 520px;
 }
 
 /* PHONE */
 .phone {
     position: absolute;
     width: 260px;
-}
-
-/* FRAME */
-.phone-frame {
-    background: #000;
-    border-radius: 40px;
+    height: 540px;
+    border-radius: 42px;
+    background: linear-gradient(145deg,#111,#000);
     padding: 10px;
     box-shadow:
-        0 40px 100px rgba(0,0,0,0.9),
+        0 60px 140px rgba(0,0,0,0.9),
         inset 0 0 0 2px #222;
 }
 
 /* SCREEN */
-.phone-screen {
-    background: linear-gradient(180deg, #0f0f14, #000);
-    border-radius: 30px;
+.screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    background: linear-gradient(180deg,#111,#000);
     padding: 16px;
 }
 
-/* TOP BAR */
-.status {
-    width: 60px;
-    height: 6px;
-    background: #222;
-    border-radius: 10px;
-    margin: 0 auto 10px;
+/* NOTCH */
+.notch {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 26px;
+    background: black;
+    border-radius: 20px;
+    z-index: 2;
 }
 
 /* UI */
-.ui-card {
+.title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card {
     background: #1a1a22;
+    padding: 12px;
     border-radius: 12px;
-    padding: 10px;
     margin-bottom: 10px;
-    font-size: 14px;
     color: #ccc;
+    font-size: 14px;
 }
 
 .highlight {
@@ -135,16 +141,16 @@ header {
 
 /* POSITION */
 .phone-left {
-    left: 40px;
+    left: 0;
     top: 80px;
-    transform: rotate(-10deg);
+    transform: rotate(-12deg);
     z-index: 1;
 }
 
 .phone-right {
-    right: 40px;
+    right: 0;
     top: 0;
-    transform: rotate(8deg);
+    transform: rotate(12deg);
     z-index: 2;
 }
 
@@ -152,10 +158,11 @@ header {
 @media (max-width: 900px) {
     .hero {
         flex-direction: column;
+        text-align: center;
     }
 
-    .hero-right {
-        width: 100%;
+    .hero-center {
+        margin-top: 40px;
         height: auto;
     }
 
@@ -165,7 +172,6 @@ header {
         margin: 20px auto;
     }
 }
-
 </style>
 </head>
 
@@ -180,65 +186,47 @@ header {
 
 <section class="hero">
 
-<!-- LEFT -->
 <div class="hero-left">
+    <h1>
+        Решаем ваши задачи быстро.<br>
+        <span>Мастера рядом.</span>
+    </h1>
 
-<h1>
-Решаем ваши задачи быстро.<br>
-<span>Мастера рядом.</span>
-</h1>
+    <p>Найдём проверенного мастера за 10 минут</p>
 
-<p>
-Найдём проверенного мастера за 10 минут — для любых задач.
-</p>
-
-<a href="#" class="btn">Оставить заявку</a>
-
+    <a href="#" class="btn">Оставить заявку</a>
 </div>
 
-<!-- RIGHT (PHONES) -->
-<div class="hero-right">
+<div class="hero-center">
 
     <!-- CLIENT -->
     <div class="phone phone-left">
-        <div class="phone-frame">
-            <div class="phone-screen">
+        <div class="screen">
+            <div class="notch"></div>
 
-                <div class="status"></div>
+            <div class="title">Главная</div>
 
-                <h3>Главная</h3>
+            <div class="card">🔍 Что нужно сделать?</div>
+            <div class="card">🔧 Ремонт</div>
+            <div class="card">🧹 Уборка</div>
+            <div class="card">💡 Электрика</div>
 
-                <div class="ui-card">🔍 Что нужно сделать?</div>
-                <div class="ui-card">🔧 Ремонт</div>
-                <div class="ui-card">🧹 Уборка</div>
-                <div class="ui-card">💡 Электрика</div>
-
-                <div class="ui-card highlight">
-                    ⭐ Лучший мастер недели
-                </div>
-
-            </div>
+            <div class="card highlight">ТОП мастер ⭐</div>
         </div>
     </div>
 
     <!-- MASTER -->
     <div class="phone phone-right">
-        <div class="phone-frame">
-            <div class="phone-screen">
+        <div class="screen">
+            <div class="notch"></div>
 
-                <div class="status"></div>
+            <div class="title">Заказы рядом</div>
 
-                <h3>Заказы рядом</h3>
+            <div class="card">Электрик — 150₾</div>
+            <div class="card">Уборка — 120₾</div>
+            <div class="card">Сборка — 200₾</div>
 
-                <div class="ui-card">Электрик — 150₾</div>
-                <div class="ui-card">Уборка — 120₾</div>
-                <div class="ui-card">Сборка — 200₾</div>
-
-                <div class="ui-card highlight">
-                    Новый заказ рядом
-                </div>
-
-            </div>
+            <div class="card highlight">Новый заказ</div>
         </div>
     </div>
 
@@ -247,5 +235,6 @@ header {
 </section>
 
 </div>
-[03.05.2026 16:33] 𝙰𝚕𝚎𝚡: </body>
+
+</body>
 </html>

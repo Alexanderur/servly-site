@@ -1,23 +1,31 @@
- <!DOCTYPE html>
+[03.05.2026 16:33] 𝙰𝚕𝚎𝚡: <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Servly</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
 <style>
+
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-    background: radial-gradient(circle at top right, #1a1a1f, #0b0b0f);
+    background: #0b0b0f;
     color: white;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* HEADER */
@@ -25,22 +33,21 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    margin-bottom: 60px;
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
 }
 
 .btn {
-    background: linear-gradient(135deg, #ffb800, #ff9500);
+    background: #ffb800;
     color: black;
-    padding: 12px 22px;
-    border-radius: 12px;
-    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
     text-decoration: none;
-    box-shadow: 0 10px 30px rgba(255,184,0,0.3);
+    font-weight: 600;
 }
 
 /* HERO */
@@ -48,7 +55,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 40px;
     gap: 40px;
 }
 
@@ -58,8 +64,9 @@ header {
 }
 
 .hero-left h1 {
-    font-size: 56px;
+    font-size: 48px;
     line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .hero-left span {
@@ -67,103 +74,104 @@ header {
 }
 
 .hero-left p {
-    margin-top: 20px;
     color: #aaa;
-    font-size: 18px;
-}
-
-.hero-left .btn {
-    margin-top: 30px;
-    display: inline-block;
-}
-
-.features {
-    margin-top: 40px;
-}
-
-.feature {
-    margin-bottom: 12px;
-    color: #ddd;
+    margin-bottom: 20px;
 }
 
 /* RIGHT (PHONES) */
 .hero-right {
     position: relative;
-    width: 520px;
-    height: 520px;
+    width: 600px;
+    height: 500px;
 }
 
 /* PHONE */
 .phone {
-    width: 280px;
-    border-radius: 40px;
-    background: #111;
-    padding: 12px;
     position: absolute;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+    width: 260px;
+}
+
+/* FRAME */
+.phone-frame {
+    background: #000;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow:
+        0 40px 100px rgba(0,0,0,0.9),
+        inset 0 0 0 2px #222;
 }
 
 /* SCREEN */
-.screen {
+.phone-screen {
+    background: linear-gradient(180deg, #0f0f14, #000);
     border-radius: 30px;
-    padding: 18px;
-    background: linear-gradient(180deg, #111, #000);
+    padding: 16px;
 }
 
-/* CARDS */
-.card {
+/* TOP BAR */
+.status {
+    width: 60px;
+    height: 6px;
+    background: #222;
+    border-radius: 10px;
+    margin: 0 auto 10px;
+}
+
+/* UI */
+.ui-card {
     background: #1a1a22;
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 10px;
     margin-bottom: 10px;
     font-size: 14px;
     color: #ccc;
 }
 
-/* CLIENT PHONE */
+.highlight {
+    background: #ffb800;
+    color: black;
+    font-weight: 600;
+}
+
+/* POSITION */
 .phone-left {
-    left: 0;
+    left: 40px;
     top: 80px;
     transform: rotate(-10deg);
     z-index: 1;
 }
 
-/* MASTER PHONE */
 .phone-right {
-    right: 0;
+    right: 40px;
     top: 0;
     transform: rotate(8deg);
     z-index: 2;
-}
-
-/* TITLE IN PHONE */
-.screen h3 {
-    margin-bottom: 10px;
 }
 
 /* MOBILE */
 @media (max-width: 900px) {
     .hero {
         flex-direction: column;
-        text-align: center;
     }
 
     .hero-right {
         width: 100%;
         height: auto;
-        margin-top: 40px;
     }
 
     .phone {
         position: relative;
         transform: none;
-        margin: 15px auto;
+        margin: 20px auto;
     }
 }
+
 </style>
 </head>
 
 <body>
+
+<div class="container">
 
 <header>
     <div class="logo">SERVLY</div>
@@ -172,66 +180,72 @@ header {
 
 <section class="hero">
 
-    <!-- LEFT -->
-    <div class="hero-left">
-        <h1>
-            Решаем ваши задачи быстро.<br>
-            <span>Мастера рядом.</span>
-        </h1>
+<!-- LEFT -->
+<div class="hero-left">
 
-        <p>
-            Найдём проверенного мастера за 10 минут —
-            для любых задач в доме и офисе.
-        </p>
+<h1>
+Решаем ваши задачи быстро.<br>
+<span>Мастера рядом.</span>
+</h1>
 
-        <a href="#" class="btn">Оставить заявку</a>
+<p>
+Найдём проверенного мастера за 10 минут — для любых задач.
+</p>
 
-        <div class="features">
-            <div class="feature">⚡ Быстрый поиск</div>
-            <div class="feature">🛡 Проверенные мастера</div>
-            <div class="feature">⏱ Экономия времени</div>
-            <div class="feature">⭐ Любые задачи</div>
-        </div>
-    </div>
+<a href="#" class="btn">Оставить заявку</a>
 
-    <!-- RIGHT -->
-    <div class="hero-right">
+</div>
 
-        <!-- CLIENT -->
-        <div class="phone phone-left">
-            <div class="screen">
+<!-- RIGHT (PHONES) -->
+<div class="hero-right">
+
+    <!-- CLIENT -->
+    <div class="phone phone-left">
+        <div class="phone-frame">
+            <div class="phone-screen">
+
+                <div class="status"></div>
+
                 <h3>Главная</h3>
 
-                <div class="card">🔍 Что нужно сделать?</div>
+                <div class="ui-card">🔍 Что нужно сделать?</div>
+                <div class="ui-card">🔧 Ремонт</div>
+                <div class="ui-card">🧹 Уборка</div>
+                <div class="ui-card">💡 Электрика</div>
 
-                <div class="card">🔧 Ремонт</div>
-                <div class="card">🧹 Уборка</div>
-                <div class="card">💡 Электрика</div>
-
-                <div class="card">
-                    ⭐ Лучший мастер недели<br>
-                    Георгий 4.9
+                <div class="ui-card highlight">
+                    ⭐ Лучший мастер недели
                 </div>
+
             </div>
         </div>
+    </div>
 
-        <!-- MASTER -->
-        <div class="phone phone-right">
-            <div class="screen">
+    <!-- MASTER -->
+    <div class="phone phone-right">
+        <div class="phone-frame">
+            <div class="phone-screen">
+
+                <div class="status"></div>
+
                 <h3>Заказы рядом</h3>
- <div class="card">Электрик — 150₾</div>
-                <div class="card">Уборка — 120₾</div>
-                <div class="card">Сборка мебели — 200₾</div>
 
-                <div class="card" style="background:#ffb800;color:black;">
+                <div class="ui-card">Электрик — 150₾</div>
+                <div class="ui-card">Уборка — 120₾</div>
+                <div class="ui-card">Сборка — 200₾</div>
+
+                <div class="ui-card highlight">
                     Новый заказ рядом
                 </div>
+
             </div>
         </div>
-
     </div>
+
+</div>
 
 </section>
 
-</body>
+</div>
+[03.05.2026 16:33] 𝙰𝚕𝚎𝚡: </body>
 </html>

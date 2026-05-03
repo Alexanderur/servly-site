@@ -5,263 +5,211 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Servly</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
 
 body{
-background:#050505;
-color:white;
-overflow-x:hidden;
+  background:#0b0b0b;
+  color:#fff;
 }
 
-/* CONTAINER */
 .container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
+  max-width:1300px;
+  margin:0 auto;
+  padding:40px 20px;
 }
 
 /* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:60px;
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:60px;
 }
 
 .logo{
-font-weight:700;
-font-size:22px;
+  font-weight:700;
+  font-size:20px;
 }
 
 .nav{
-display:flex;
-gap:30px;
-color:#aaa;
+  display:flex;
+  gap:30px;
+  color:#aaa;
 }
 
-.btn{
-background:#ffc107;
-color:black;
-padding:12px 18px;
-border-radius:12px;
-font-weight:600;
-cursor:pointer;
+.cta{
+  background:#ffc400;
+  color:#000;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
 }
 
 /* HERO */
 .hero{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:40px;
-flex-wrap:wrap;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
 }
 
-/* LEFT */
 .left{
-max-width:520px;
+  max-width:520px;
 }
 
 .badge{
-background:#111;
-padding:8px 14px;
-border-radius:20px;
-display:inline-block;
-margin-bottom:20px;
-font-size:14px;
-color:#aaa;
+  background:#1a1a1a;
+  padding:6px 12px;
+  border-radius:20px;
+  display:inline-block;
+  margin-bottom:20px;
+  color:#aaa;
+  font-size:14px;
 }
 
 h1{
-font-size:56px;
-line-height:1.1;
+  font-size:48px;
+  line-height:1.2;
+  margin-bottom:20px;
 }
 
-.yellow{
-color:#ffc107;
+.highlight{
+  color:#ffc400;
 }
 
-.sub{
-color:#aaa;
-margin:20px 0;
+.desc{
+  color:#aaa;
+  margin-bottom:25px;
+}
+
+.btn{
+  background:#ffc400;
+  color:#000;
+  padding:16px 26px;
+  border-radius:12px;
+  display:inline-block;
+  font-weight:600;
+  margin-bottom:25px;
 }
 
 .features{
-margin-top:20px;
+  color:#bbb;
+  font-size:14px;
+  line-height:1.8;
 }
 
-.features div{
-margin:10px 0;
-color:#ccc;
+/* PHONES */
+.phones{
+  position:relative;
+  width:500px;
+  height:500px;
 }
 
-/* RIGHT PHONES */
-.right{
-position:relative;
-width:500px;
-height:600px;
-}
-
-/* GLOW */
-.glow{
-position:absolute;
-width:400px;
-height:400px;
-background:radial-gradient(circle,#ffc10733,transparent);
-top:100px;
-left:50px;
-filter:blur(60px);
-}
-
-/* PHONE */
 .phone{
-position:absolute;
-width:260px;
-height:520px;
-border-radius:36px;
-background:#111;
-padding:14px;
-box-shadow:0 40px 120px rgba(0,0,0,0.9);
+  width:240px;
+  height:480px;
+  border-radius:40px;
+  background:#111;
+  box-shadow:0 30px 60px rgba(0,0,0,0.6);
+  padding:14px;
+  position:absolute;
 }
 
-.phone1{
-left:80px;
-transform:rotate(-8deg);
-z-index:2;
-}
-
-.phone2{
-right:0;
-top:80px;
-transform:rotate(10deg);
-}
-
-/* SCREEN */
 .screen{
-width:100%;
-height:100%;
-background:#0a0a0a;
-border-radius:26px;
-padding:14px;
+  width:100%;
+  height:100%;
+  background:#000;
+  border-radius:30px;
+  padding:14px;
+  font-size:13px;
+}
+
+/* LEFT PHONE */
+.phone.left{
+  transform:rotate(-12deg);
+  left:0;
+  top:40px;
+}
+
+/* RIGHT PHONE */
+.phone.right{
+  transform:rotate(10deg);
+  right:0;
 }
 
 /* UI */
+.ui-title{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
 .search{
-background:#111;
-padding:10px;
-border-radius:12px;
-margin-bottom:12px;
-color:#666;
-}
-
-.tags{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-margin-bottom:12px;
-}
-
-.tag{
-background:#1a1a1a;
-padding:6px 10px;
-border-radius:10px;
-font-size:12px;
+  background:#1a1a1a;
+  padding:10px;
+  border-radius:10px;
+  margin-bottom:10px;
 }
 
 .card{
-background:#141414;
-padding:12px;
-border-radius:12px;
-margin-bottom:10px;
+  background:#1a1a1a;
+  padding:10px;
+  border-radius:10px;
+  margin-bottom:8px;
 }
 
-.yellow-card{
-background:#ffc107;
-color:black;
-font-weight:600;
+.yellow{
+  background:#ffc400;
+  color:#000;
+  font-weight:600;
 }
 
-/* BOTTOM BAR */
-.bottom{
-background:white;
-color:black;
-margin-top:80px;
-border-radius:30px 30px 0 0;
-padding:30px;
-display:flex;
-justify-content:space-around;
-text-align:center;
-flex-wrap:wrap;
+/* STATS */
+.stats{
+  background:#fff;
+  color:#000;
+  border-radius:20px;
+  padding:25px;
+  margin-top:60px;
+  display:flex;
+  justify-content:space-around;
+  text-align:center;
 }
 
-.bottom div{
-margin:10px;
+.stat-title{
+  font-weight:700;
 }
 
 /* HOW */
-.section{
-margin-top:60px;
+.how{
+  margin-top:60px;
 }
 
 .steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:20px;
+  display:flex;
+  gap:20px;
+  margin-top:20px;
 }
 
 .step{
-background:#111;
-padding:20px;
-border-radius:14px;
-color:#aaa;
+  flex:1;
+  background:#151515;
+  padding:20px;
+  border-radius:12px;
 }
 
-/* FORM */
-.form{
-background:#111;
-padding:30px;
-border-radius:20px;
-margin-top:40px;
-max-width:600px;
-}
+/* ADAPTIVE */
+@media(max-width:1000px){
+  .hero{
+    flex-direction:column;
+  }
 
-input,textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-background:#1a1a1a;
-color:white;
-}
-
-button{
-width:100%;
-background:#ffc107;
-border:none;
-padding:14px;
-border-radius:10px;
-font-weight:600;
-cursor:pointer;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.right{
-height:500px;
-}
-
-.phone1{left:60px;}
-.phone2{right:60px;}
+  .phones{
+    transform:scale(0.8);
+  }
 }
 </style>
 </head>
@@ -270,109 +218,108 @@ height:500px;
 
 <div class="container">
 
-<header>
-<div class="logo">SERVLY</div>
-
-<div class="nav">
-<div>Главная</div>
-<div>Как это работает</div>
-<div>Преимущества</div>
-<div>Отзывы</div>
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">SERVLY</div>
+  <div class="nav">
+    <div>Главная</div>
+    <div>Как это работает</div>
+    <div>Отзывы</div>
+  </div>
+  <div class="cta">Оставить заявку</div>
 </div>
 
-<div class="btn">Оставить заявку</div>
-</header>
-
-<section class="hero">
+<!-- HERO -->
+<div class="hero">
 
 <div class="left">
-<div class="badge">⚡ Найдём мастера за 10 минут</div>
+  <div class="badge">⚡ Найдём мастера за 10 минут</div>
 
-<h1>
-Решаем ваши задачи быстро.<br>
-<span class="yellow">Мастера рядом.</span>
-</h1>
+  <h1>
+    Решаем ваши задачи быстро.<br>
+    <span class="highlight">Мастера рядом.</span>
+  </h1>
 
-<div class="sub">
-Найдём проверенного мастера для любой задачи
+  <div class="desc">
+    Найдём проверенного мастера для любых задач дома и в офисе.
+  </div>
+
+  <div class="btn">Оставить заявку →</div>
+
+  <div class="features">
+    ✔ Быстрый поиск<br>
+    ✔ Проверенные мастера<br>
+    ✔ Онлайн оплата<br>
+    ✔ Выплаты мастерам
+  </div>
 </div>
 
-<div class="btn">Оставить заявку →</div>
+<!-- PHONES -->
+<div class="phones">
 
-<div class="features">
-<div>⚡ Быстрый поиск</div>
-<div>✔ Проверенные мастера</div>
-<div>🕒 Экономия времени</div>
-<div>⭐ Любые задачи</div>
-</div>
-</div>
+  <!-- CLIENT -->
+  <div class="phone left">
+    <div class="screen">
+      <div class="ui-title">Привет</div>
+      <div class="search">Что нужно сделать?</div>
 
-<div class="right">
+      <div class="card yellow">Активный заказ</div>
+      <div class="card">Срочный вызов</div>
 
-<div class="glow"></div>
+      <div class="card">Ремонт</div>
+      <div class="card">Уборка</div>
+    </div>
+  </div>
 
-<div class="phone phone1">
-<div class="screen">
- <div class="search">Что нужно сделать?</div>
-
-<div class="tags">
-<div class="tag">Ремонт</div>
-<div class="tag">Уборка</div>
-<div class="tag">Сборка</div>
-</div>
-
-<div class="card yellow-card">Активный заказ</div>
-
-<div class="card">Срочный вызов мастера</div>
-
-</div>
-</div>
-
-<div class="phone phone2">
-<div class="screen">
-
-<div class="card">Баланс: 0₾</div>
-<div class="card">Мои заказы</div>
-<div class="card">Способы выплат</div>
-<div class="card">Документы</div>
-
-</div>
-</div>
+  <!-- MASTER -->
+  <div class="phone right">
+    <div class="screen">
+      <div class="ui-title">Баланс: 0 ₾</div>
+ <div class="card">Мои заказы</div>
+      <div class="card">Специализации</div>
+      <div class="card">График</div>
+      <div class="card">Выплаты</div>
+    </div>
+  </div>
 
 </div>
 
-</section>
+</div>
 
 <!-- STATS -->
-<div class="bottom">
-<div><b>—</b><br>Клиенты</div>
-<div><b>—</b><br>Рейтинг</div>
-<div><b>—</b><br>Категории</div>
-<div><b>—</b><br>Среднее время</div>
+<div class="stats">
+  <div>
+    <div class="stat-title">Новые клиенты</div>
+    <div>каждый день</div>
+  </div>
+
+  <div>
+    <div class="stat-title">Рейтинг</div>
+    <div>высокий</div>
+  </div>
+
+  <div>
+    <div class="stat-title">Проверка</div>
+    <div>каждого мастера</div>
+  </div>
+
+  <div>
+    <div class="stat-title">Поиск</div>
+    <div>до 10 минут</div>
+  </div>
 </div>
 
 <!-- HOW -->
-<section class="section">
-<h2>Как это работает</h2>
+<div class="how">
+  <h2>Как это работает</h2>
 
-<div class="steps">
-<div class="step">1. Оставляете заявку</div>
-<div class="step">2. Получаете предложения</div>
-<div class="step">3. Выбираете мастера</div>
-<div class="step">4. Оплачиваете после работы</div>
+  <div class="steps">
+    <div class="step">1. Оставляете заявку</div>
+    <div class="step">2. Получаете предложения</div>
+    <div class="step">3. Выбираете мастера</div>
+    <div class="step">4. Оплата после работы</div>
+  </div>
 </div>
-</section>
-
-<!-- FORM -->
-<section class="form">
-<h2>Оставить заявку</h2>
-
-<input placeholder="Имя">
-<input placeholder="Телефон">
-<textarea placeholder="Что нужно сделать"></textarea>
-
-<button>Отправить</button>
-</section>
 
 </div>
 

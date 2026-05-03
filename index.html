@@ -14,7 +14,7 @@
 }
 
 body {
-    background: #000;
+    background: radial-gradient(circle at top right, #111, #000);
     color: white;
 }
 
@@ -22,16 +22,27 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .btn {
     background: #ffb800;
     padding: 12px 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     color: black;
     text-decoration: none;
     font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* HERO */
@@ -39,16 +50,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 40px;
+    padding: 80px 60px;
 }
 
 /* TEXT */
 .hero-text {
-    max-width: 500px;
+    max-width: 520px;
 }
 
 .hero-text h1 {
-    font-size: 56px;
+    font-size: 60px;
     line-height: 1.1;
 }
 
@@ -58,12 +69,28 @@ header {
 
 .hero-text p {
     color: #aaa;
-    margin: 20px 0;
+    margin: 20px 0 30px;
+}
+
+/* FEATURES */
+.features {
+    margin-top: 20px;
+}
+
+.features div {
+    margin-bottom: 10px;
+    color: #ccc;
 }
 
 /* IMAGE */
+.hero-image {
+    position: relative;
+}
+
 .hero-image img {
-    width: 500px;
+    width: 520px;
+    transform: rotate(-5deg);
+    filter: drop-shadow(0 40px 80px rgba(255,184,0,0.2));
 }
 
 /* MOBILE */
@@ -75,7 +102,8 @@ header {
 
     .hero-image img {
         width: 100%;
-        margin-top: 30px;
+        transform: none;
+        margin-top: 40px;
     }
 }
 </style>
@@ -84,7 +112,7 @@ header {
 <body>
 
 <header>
-    <h2>SERVLY</h2>
+    <div class="logo">SERVLY</div>
     <a href="#" class="btn">Оставить заявку</a>
 </header>
 
@@ -96,13 +124,22 @@ header {
         <span>за 2 минуты</span>
     </h1>
 
-    <p>Сервис для поиска проверенных специалистов</p>
+    <p>
+        Сервис для поиска проверенных специалистов рядом с вами
+    </p>
 
     <a href="#" class="btn">Оставить заявку</a>
+
+    <div class="features">
+        <div>⚡ Быстрый поиск</div>
+        <div>✔ Проверенные мастера</div>
+        <div>🕒 Экономия времени</div>
+        <div>⭐ Любые задачи</div>
+    </div>
 </div>
 
 <div class="hero-image">
-    <img src="phones.png">
+    <img src="phones.jpg">
 </div>
 
 </section>
